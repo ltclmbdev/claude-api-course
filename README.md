@@ -36,17 +36,17 @@ docs/
 
 ## Progress
 
-| #   | Module                                                                    | Lessons | Status     |
-| --- | ------------------------------------------------------------------------- | ------- | ---------- |
-| 1   | [Accessing Claude with the API](./lessons/01-accessing-claude)            | 9       | 🟡 started |
-| 2   | [Prompt evaluation](./lessons/02-prompt-evaluation)                       | 7       | ⬜         |
-| 3   | [Prompt engineering techniques](./lessons/03-prompt-engineering)          | 6       | ⬜         |
-| 4   | [Tool use with Claude](./lessons/04-tool-use)                             | 13      | ⬜         |
-| 5   | [RAG and Agentic Search](./lessons/05-rag)                                | 7       | ⬜         |
-| 6   | [Features of Claude](./lessons/06-features)                               | 9       | ⬜         |
-| 7   | [Model Context Protocol](./lessons/07-mcp)                                | 11      | ⬜         |
-| 8   | [Anthropic apps — Claude Code and computer use](./lessons/08-claude-code) | 4       | ⬜         |
-| 9   | [Agents and workflows](./lessons/09-agents-and-workflows)                 | 8       | ⬜         |
+| #   | Module                                                                    | Lessons | Status |
+| --- | ------------------------------------------------------------------------- | ------- | ------ |
+| 1   | [Accessing Claude with the API](./lessons/01-accessing-claude)            | 9       | 🟡 4/9 |
+| 2   | [Prompt evaluation](./lessons/02-prompt-evaluation)                       | 7       | ⬜     |
+| 3   | [Prompt engineering techniques](./lessons/03-prompt-engineering)          | 6       | ⬜     |
+| 4   | [Tool use with Claude](./lessons/04-tool-use)                             | 13      | ⬜     |
+| 5   | [RAG and Agentic Search](./lessons/05-rag)                                | 7       | ⬜     |
+| 6   | [Features of Claude](./lessons/06-features)                               | 9       | ⬜     |
+| 7   | [Model Context Protocol](./lessons/07-mcp)                                | 11      | ⬜     |
+| 8   | [Anthropic apps — Claude Code and computer use](./lessons/08-claude-code) | 4       | ⬜     |
+| 9   | [Agents and workflows](./lessons/09-agents-and-workflows)                 | 8       | ⬜     |
 
 ## Where the course is out of date
 
