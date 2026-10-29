@@ -37,6 +37,7 @@ lessons/
   ...
 src/lib/
   client.ts                 # Anthropic client + model ids
+  messages.ts               # addUserMessage / addAssistantMessage / chat / getText
 docs/
   python-to-ts.md           # how course Python maps to the TS SDK
 ```
