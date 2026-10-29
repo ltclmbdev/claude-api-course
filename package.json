@@ -1,0 +1,27 @@
+{
+  "name": "claude-api-course",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Building with the Claude API (Claude Academy) — exercises in TypeScript",
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "lesson": "tsx --env-file=.env",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "1.3.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "6.0.2",
+    "@types/node": "24.19.0",
+    "prettier": "3.9.10",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3"
+  }
+}
