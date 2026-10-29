@@ -23,11 +23,21 @@ export const getText = (message: Anthropic.Message) =>
     .map((block) => block.text)
     .join('')
 
-export const chat = async (messages: Messages) => {
+export type ChatOptions = {
+  system?: string
+}
+
+export const chat = async (
+  messages: Messages,
+  { system }: ChatOptions = {}
+) => {
+  // Python builds a params dict and skips `system` when it's None.
+  // In TS an undefined property is simply left out of the JSON body.
   const message = await client.messages.create({
     model,
     max_tokens: 1000,
     messages,
+    system,
   })
 
   return getText(message)
