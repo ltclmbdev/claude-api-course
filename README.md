@@ -43,6 +43,14 @@ docs/
   python-to-ts.md           # how course Python maps to the TS SDK
 ```
 
+## Where the course is out of date
+
+SDK 1.x sends API version `2026-10-21`, and the current models (Haiku 5.5, Sonnet 5.5) changed things the course still teaches:
+
+- **Temperature**: `temperature`, `top_p` and `top_k` are removed. Requests with them fail with a 400 error. See [`06-temperature.ts`](./lessons/01-accessing-claude/06-temperature.ts).
+
+The quiz still tests these concepts as the course teaches them.
+
 ## Scripts
 
 | Script                  | What it does                            |
