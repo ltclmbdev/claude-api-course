@@ -25,12 +25,13 @@ export const getText = (message: Anthropic.Message) =>
 
 export type ChatOptions = {
   system?: string
+  stopSequences?: string[]
   maxTokens?: number
 }
 
 export const chat = async (
   messages: Messages,
-  { system, maxTokens = 1000 }: ChatOptions = {}
+  { system, stopSequences, maxTokens = 1000 }: ChatOptions = {}
 ) => {
   // Python builds a params dict and skips `system` when it's None.
   // In TS an undefined property is simply left out of the JSON body.
@@ -39,6 +40,7 @@ export const chat = async (
     max_tokens: maxTokens,
     messages,
     system,
+    stop_sequences: stopSequences,
   })
 
   return getText(message)

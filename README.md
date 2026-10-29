@@ -48,6 +48,7 @@ docs/
 SDK 1.x sends API version `2026-10-21`, and the current models (Haiku 5.5, Sonnet 5.5) changed things the course still teaches:
 
 - **Temperature**: `temperature`, `top_p` and `top_k` are removed. Requests with them fail with a 400 error. See [`06-temperature.ts`](./lessons/01-accessing-claude/06-temperature.ts).
+- **Assistant prefill**: a `messages` array that ends with an assistant turn returns a 400 error. Use structured outputs instead. See [`08-structured-data.ts`](./lessons/01-accessing-claude/08-structured-data.ts).
 
 The quiz still tests these concepts as the course teaches them.
 
