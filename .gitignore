@@ -9,6 +9,3 @@
 .DS_Store
 *.log
 *.tsbuildinfo
-
-# eval outputs (re-generated on every run)
-lessons/02-prompt-evaluation/data/results-*.json
