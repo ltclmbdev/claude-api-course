@@ -9,3 +9,6 @@
 .DS_Store
 *.log
 *.tsbuildinfo
+
+# eval runs — one file per run, regenerated any time
+lessons/02-prompt-evaluation/data/results-*.json
