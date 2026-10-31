@@ -30,6 +30,7 @@ lessons/
 src/lib/
   client.ts                 # Anthropic client + model ids
   messages.ts               # addUserMessage / addAssistantMessage / chat / getText
+  eval/                     # eval pipeline from module 2
 docs/
   python-to-ts.md           # how course Python maps to the TS SDK
 ```
