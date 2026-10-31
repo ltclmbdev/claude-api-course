@@ -17,12 +17,12 @@ Differences from the course:
 
 Run lesson 3 first: the others read the dataset it writes.
 
-| #   | Lesson                                                                                                                 | Exercise                                                             |
-| --- | ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| 1   | [Prompt evaluation](https://academy.claude.com/courses/building-with-the-claude-api/prompt-evaluation)                 |                                                                      |
-| 2   | [A typical eval workflow](https://academy.claude.com/courses/building-with-the-claude-api/a-typical-eval-workflow)     |                                                                      |
-| 3   | [Generating test datasets](https://academy.claude.com/courses/building-with-the-claude-api/generating-test-datasets)   | [`03-generating-test-datasets.ts`](./03-generating-test-datasets.ts) |
-| 4   | [Running the eval](https://academy.claude.com/courses/building-with-the-claude-api/running-the-eval)                   | [`04-running-the-eval.ts`](./04-running-the-eval.ts)                 |
-| 5   | [Model based grading](https://academy.claude.com/courses/building-with-the-claude-api/model-based-grading)             | [`05-model-based-grading.ts`](./05-model-based-grading.ts)           |
-| 6   | [Code based grading](https://academy.claude.com/courses/building-with-the-claude-api/code-based-grading)               | [`06-code-based-grading.ts`](./06-code-based-grading.ts)             |
-| 7   | [Quiz on prompt evaluation](https://academy.claude.com/courses/building-with-the-claude-api/quiz-on-prompt-evaluation) | —                                                                    |
+| #   | Lesson                                                                                                                 | Exercise                                                             | Done |
+| --- | ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ---- |
+| 1   | [Prompt evaluation](https://academy.claude.com/courses/building-with-the-claude-api/prompt-evaluation)                 |                                                                      | ✅   |
+| 2   | [A typical eval workflow](https://academy.claude.com/courses/building-with-the-claude-api/a-typical-eval-workflow)     |                                                                      | ✅   |
+| 3   | [Generating test datasets](https://academy.claude.com/courses/building-with-the-claude-api/generating-test-datasets)   | [`03-generating-test-datasets.ts`](./03-generating-test-datasets.ts) | ✅   |
+| 4   | [Running the eval](https://academy.claude.com/courses/building-with-the-claude-api/running-the-eval)                   | [`04-running-the-eval.ts`](./04-running-the-eval.ts)                 |      |
+| 5   | [Model based grading](https://academy.claude.com/courses/building-with-the-claude-api/model-based-grading)             | [`05-model-based-grading.ts`](./05-model-based-grading.ts)           |      |
+| 6   | [Code based grading](https://academy.claude.com/courses/building-with-the-claude-api/code-based-grading)               | [`06-code-based-grading.ts`](./06-code-based-grading.ts)             |      |
+| 7   | [Quiz on prompt evaluation](https://academy.claude.com/courses/building-with-the-claude-api/quiz-on-prompt-evaluation) | —                                                                    |      |

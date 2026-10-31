@@ -40,7 +40,7 @@ docs/
 | #   | Module                                                                    | Lessons | Status |
 | --- | ------------------------------------------------------------------------- | ------- | ------ |
 | 1   | [Accessing Claude with the API](./lessons/01-accessing-claude)            | 9       | ✅ 9/9 |
-| 2   | [Prompt evaluation](./lessons/02-prompt-evaluation)                       | 7       | ⬜     |
+| 2   | [Prompt evaluation](./lessons/02-prompt-evaluation)                       | 7       | 🟡 3/7 |
 | 3   | [Prompt engineering techniques](./lessons/03-prompt-engineering)          | 6       | ⬜     |
 | 4   | [Tool use with Claude](./lessons/04-tool-use)                             | 13      | ⬜     |
 | 5   | [RAG and Agentic Search](./lessons/05-rag)                                | 7       | ⬜     |
