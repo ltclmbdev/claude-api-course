@@ -1,0 +1,14 @@
+[
+  {
+    "task": "Write a TypeScript function that takes an S3 bucket name and returns a promise resolving to true if the bucket exists and false if it returns a NoSuchBucket error, using the AWS SDK v3 S3Client and HeadBucketCommand.",
+    "format": "typescript"
+  },
+  {
+    "task": "Produce a JSON object for an AWS IAM policy document that allows s3:GetObject and s3:PutObject on arn:aws:s3:::my-app-logs/* and denies all actions when aws:SecureTransport is false.",
+    "format": "json"
+  },
+  {
+    "task": "Write a regular expression that matches a valid AWS access key ID, which starts with AKIA followed by exactly 16 uppercase letters or digits.",
+    "format": "regex"
+  }
+]

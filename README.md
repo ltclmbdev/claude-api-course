@@ -11,6 +11,7 @@ One branch per course section. Each branch starts from the previous one, and eve
 | #   | Section                                                        | Branch                             |
 | --- | -------------------------------------------------------------- | ---------------------------------- |
 | 1   | [Accessing Claude with the API](./lessons/01-accessing-claude) | `01-accessing-claude-with-the-api` |
+| 2   | [Prompt evaluation](./lessons/02-prompt-evaluation)            | `02-prompt-evaluation`             |
 
 ## Setup
 
@@ -39,6 +40,7 @@ src/lib/
   client.ts                 # Anthropic client + model ids
   messages.ts               # addUserMessage / addAssistantMessage / chat / getText
   print.ts                  # heading() for lesson output
+  eval/                     # eval pipeline from section 2
 docs/
   python-to-ts.md           # how course Python maps to the TS SDK
 ```
