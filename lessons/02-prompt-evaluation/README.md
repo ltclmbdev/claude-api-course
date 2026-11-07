@@ -2,9 +2,10 @@
 
 One eval pipeline, built up lesson by lesson. The code lives in [`src/lib/eval`](../../src/lib/eval); the lesson scripts are entry points. Each lesson is added in its own commit, so its diff shows exactly what the lesson adds.
 
-| File         | What it is                                                         | Lesson |
-| ------------ | ------------------------------------------------------------------ | ------ |
-| `dataset.ts` | Test case schema, `generateDataset`, load/save `data/dataset.json` | 3      |
+| File         | What it is                                                                                                         | Lesson |
+| ------------ | ------------------------------------------------------------------------------------------------------------------ | ------ |
+| `dataset.ts` | Test case schema, `generateDataset`, load/save `data/dataset.json`                                                 | 3      |
+| `runner.ts`  | `runPrompt` → `runTestCase` → `runEval`; `saveResults` writes each run to `data/results-<time>.json` (git-ignored) | 4      |
 
 Differences from the course:
 

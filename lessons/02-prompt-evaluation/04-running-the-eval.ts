@@ -12,7 +12,7 @@
  * Run: npm run lesson lessons/02-prompt-evaluation/04-running-the-eval.ts
  */
 import { loadDataset } from '@/lib/eval/dataset.ts'
-import { runEval } from '@/lib/eval/runner.ts'
+import { runEval, saveResults } from '@/lib/eval/runner.ts'
 
 const dataset = await loadDataset()
 
@@ -23,3 +23,6 @@ const seconds = ((performance.now() - start) / 1000).toFixed(1)
 // Python: print(json.dumps(results, indent=2))
 console.log(JSON.stringify(results, null, 2))
 console.log(`\n${results.length} test cases in ${seconds}s`)
+
+const path = await saveResults(results)
+console.log(`Saved to ${path}`)
