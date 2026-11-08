@@ -5,9 +5,10 @@
  * Code: src/lib/eval/runner.ts
  * Needs data/dataset.json from lesson 3.
  *
- * Grading is still a placeholder (every score is 10), so look at the
- * outputs themselves: with no format rules in the prompt they come back
- * long, chatty and wrapped in code fences.
+ * In this lesson grading was a placeholder (every score 10). Since lesson 5,
+ * runTestCase grades with a model, so this script now prints real scores too.
+ * The point here is still the outputs: with no format rules in the prompt
+ * they come back long, chatty and wrapped in code fences.
  *
  * Run: npm run lesson lessons/02-prompt-evaluation/04-running-the-eval.ts
  */
