@@ -9,11 +9,13 @@ import { join } from 'node:path'
 
 import { type Messages, addUserMessage, chat } from '../messages.ts'
 import { DATA_DIR, type TestCase } from './dataset.ts'
+import { gradeByModel } from './graders.ts'
 
 export type EvalResult = {
   output: string
   testCase: TestCase
   score: number
+  reasoning: string
 }
 
 // Merges the prompt and the test case, returns Claude's answer.
@@ -34,10 +36,12 @@ ${testCase.task}
 export const runTestCase = async (testCase: TestCase): Promise<EvalResult> => {
   const output = await runPrompt(testCase)
 
-  // TODO: grading — comes in lesson 5
-  const score = 10
+  // Lesson 5: the hardcoded 10 is replaced by a model grader.
+  // strengths/weaknesses are only there to make the grader think;
+  // the result keeps the score and the reasoning.
+  const { score, reasoning } = await gradeByModel(testCase, output)
 
-  return { output, testCase, score }
+  return { output, testCase, score, reasoning }
 }
 
 // Runs every test case one after another, like the course.
@@ -54,9 +58,13 @@ export const runEval = async (dataset: TestCase[]) => {
   return results
 }
 
+// Lesson 5: one number to compare prompt versions by.
+export const averageScore = (results: EvalResult[]) =>
+  results.reduce((sum, { score }) => sum + score, 0) / results.length
+
 // Not in the course: keep every run on disk to re-read outputs and compare
 // prompt versions later. One file per run, e.g.
-// data/results-2026-11-07T19-45-12-345Z.json (colons aren't allowed in
+// data/results-2026-11-07T19-45-12.345Z.json (colons aren't allowed in
 // file names on every OS). Git-ignored, unlike dataset.json.
 export const saveResults = async (results: EvalResult[]) => {
   await mkdir(DATA_DIR, { recursive: true })
