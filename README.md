@@ -8,10 +8,11 @@ The course examples are in Python. Here every code lesson is a standalone TypeSc
 
 One branch per course section. Each branch starts from the previous one, and every lesson with code is one commit titled after the lesson.
 
-| #   | Section                                                        | Branch                             |
-| --- | -------------------------------------------------------------- | ---------------------------------- |
-| 1   | [Accessing Claude with the API](./lessons/01-accessing-claude) | `01-accessing-claude-with-the-api` |
-| 2   | [Prompt evaluation](./lessons/02-prompt-evaluation)            | `02-prompt-evaluation`             |
+| #   | Section                                                          | Branch                             |
+| --- | ---------------------------------------------------------------- | ---------------------------------- |
+| 1   | [Accessing Claude with the API](./lessons/01-accessing-claude)   | `01-accessing-claude-with-the-api` |
+| 2   | [Prompt evaluation](./lessons/02-prompt-evaluation)              | `02-prompt-evaluation`             |
+| 3   | [Prompt engineering techniques](./lessons/03-prompt-engineering) | `03-prompt-engineering-techniques` |
 
 ## Setup
 
@@ -41,6 +42,7 @@ src/lib/
   messages.ts               # addUserMessage / addAssistantMessage / chat / getText
   print.ts                  # heading() for lesson output
   eval/                     # eval pipeline from section 2
+  prompt-evaluator/         # generateDataset / runEvaluation + HTML report for section 3
 docs/
   python-to-ts.md           # how course Python maps to the TS SDK
 ```
