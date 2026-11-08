@@ -9,22 +9,39 @@ import { join } from 'node:path'
 
 import { type Messages, addUserMessage, chat } from '../messages.ts'
 import { DATA_DIR, type TestCase } from './dataset.ts'
-import { gradeByModel } from './graders.ts'
+import { gradeByModel, gradeSyntax } from './graders.ts'
 
 export type EvalResult = {
   output: string
   testCase: TestCase
   score: number
+  modelScore: number
+  syntaxScore: number
   reasoning: string
 }
 
+const formatLabel: Record<TestCase['format'], string> = {
+  typescript: 'TypeScript',
+  json: 'JSON',
+  regex: 'a plain regular expression',
+}
+
 // Merges the prompt and the test case, returns Claude's answer.
-// The prompt is deliberately naive: no rules about the output format.
+//
+// Lesson 6: the prompt now says exactly what shape the output must have.
+// The course also prefills the assistant turn with "```code" so Claude
+// starts writing code straight away. Prefill returns a 400 on current
+// models, so here the rules have to do all the work — the syntax grader
+// shows whether they do.
 export const runPrompt = async (testCase: TestCase) => {
   const prompt = `
 Please solve the following task:
 
 ${testCase.task}
+
+* Respond only with ${formatLabel[testCase.format]}
+* Do not wrap the response in markdown code fences
+* Do not add any comments, commentary or explanation
 `
 
   const messages: Messages = []
@@ -39,9 +56,14 @@ export const runTestCase = async (testCase: TestCase): Promise<EvalResult> => {
   // Lesson 5: the hardcoded 10 is replaced by a model grader.
   // strengths/weaknesses are only there to make the grader think;
   // the result keeps the score and the reasoning.
-  const { score, reasoning } = await gradeByModel(testCase, output)
+  const { score: modelScore, reasoning } = await gradeByModel(testCase, output)
 
-  return { output, testCase, score, reasoning }
+  // Lesson 6: plus a code grader. Equal weights, like the course —
+  // tune them to what matters more for your prompt.
+  const syntaxScore = gradeSyntax(output, testCase)
+  const score = (modelScore + syntaxScore) / 2
+
+  return { output, testCase, score, modelScore, syntaxScore, reasoning }
 }
 
 // Runs every test case one after another, like the course.
