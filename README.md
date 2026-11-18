@@ -13,6 +13,7 @@ One branch per course section. Each branch starts from the previous one, and eve
 | 1   | [Accessing Claude with the API](./lessons/01-accessing-claude)   | `01-accessing-claude-with-the-api` |
 | 2   | [Prompt evaluation](./lessons/02-prompt-evaluation)              | `02-prompt-evaluation`             |
 | 3   | [Prompt engineering techniques](./lessons/03-prompt-engineering) | `03-prompt-engineering-techniques` |
+| 4   | [Tool use with Claude](./lessons/04-tool-use)                    | `04-tool-use-with-claude`          |
 
 ## Setup
 
@@ -43,6 +44,7 @@ src/lib/
   print.ts                  # heading() for lesson output
   eval/                     # eval pipeline from section 2
   prompt-evaluator/         # generateDataset / runEvaluation + HTML report for section 3
+  tools/                    # tool functions for section 4
 docs/
   python-to-ts.md           # how course Python maps to the TS SDK
 ```
