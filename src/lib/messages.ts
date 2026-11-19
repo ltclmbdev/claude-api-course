@@ -11,8 +11,16 @@ export const addUserMessage = (messages: Messages, text: string) => {
   messages.push({ role: 'user', content: text })
 }
 
-export const addAssistantMessage = (messages: Messages, text: string) => {
-  messages.push({ role: 'assistant', content: text })
+// Section 4: also takes a whole response, so tool_use blocks stay in the
+// history next to the text. Python: content=message.content
+export const addAssistantMessage = (
+  messages: Messages,
+  message: string | Anthropic.Message
+) => {
+  messages.push({
+    role: 'assistant',
+    content: typeof message === 'string' ? message : message.content,
+  })
 }
 
 // Python: message.content[0].text
@@ -27,21 +35,26 @@ export type ChatOptions = {
   system?: string
   stopSequences?: string[]
   maxTokens?: number
+  tools?: Anthropic.ToolUnion[]
 }
 
-export const chat = async (
+// Section 4: returns the whole response — with tools, it can hold tool_use
+// blocks, not just text.
+export const sendMessage = (
   messages: Messages,
-  { system, stopSequences, maxTokens = 1000 }: ChatOptions = {}
-) => {
+  { system, stopSequences, maxTokens = 1000, tools }: ChatOptions = {}
+) =>
   // Python builds a params dict and skips `system` when it's None.
   // In TS an undefined property is simply left out of the JSON body.
-  const message = await client.messages.create({
+  client.messages.create({
     model,
     max_tokens: maxTokens,
     messages,
     system,
     stop_sequences: stopSequences,
+    tools,
   })
 
-  return getText(message)
-}
+// Text-only shortcut used by the earlier lessons.
+export const chat = async (messages: Messages, options?: ChatOptions) =>
+  getText(await sendMessage(messages, options))
