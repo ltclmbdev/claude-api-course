@@ -7,7 +7,7 @@ The section builds a reminder system: Claude gets tools to read the current time
 | 1   | [Introducing tool use](https://academy.claude.com/courses/building-with-the-claude-api/introducing-tool-use)                               |                                                  |
 | 2   | [Project overview](https://academy.claude.com/courses/building-with-the-claude-api/project-overview)                                       |                                                  |
 | 3   | [Tool functions](https://academy.claude.com/courses/building-with-the-claude-api/tool-functions)                                           | [`03-tool-functions.ts`](./03-tool-functions.ts) |
-| 4   | [Tool schemas](https://academy.claude.com/courses/building-with-the-claude-api/tool-schemas)                                               |                                                  |
+| 4   | [Tool schemas](https://academy.claude.com/courses/building-with-the-claude-api/tool-schemas)                                               | [`04-tool-schemas.ts`](./04-tool-schemas.ts)     |
 | 5   | [Handling message blocks](https://academy.claude.com/courses/building-with-the-claude-api/handling-message-blocks)                         |                                                  |
 | 6   | [Sending tool results](https://academy.claude.com/courses/building-with-the-claude-api/sending-tool-results)                               |                                                  |
 | 7   | [Multi-turn conversations with tools](https://academy.claude.com/courses/building-with-the-claude-api/multi-turn-conversations-with-tools) |                                                  |
