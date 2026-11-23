@@ -7,8 +7,13 @@ import { client, model } from './client.ts'
 
 export type Messages = Anthropic.MessageParam[]
 
-export const addUserMessage = (messages: Messages, text: string) => {
-  messages.push({ role: 'user', content: text })
+// Section 4: also takes content blocks — a tool result is sent back as a
+// user message with a tool_result block.
+export const addUserMessage = (
+  messages: Messages,
+  content: string | Anthropic.ContentBlockParam[]
+) => {
+  messages.push({ role: 'user', content })
 }
 
 // Section 4: also takes a whole response, so tool_use blocks stay in the
