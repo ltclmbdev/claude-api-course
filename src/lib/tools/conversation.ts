@@ -90,6 +90,13 @@ export const runConversation = async (
     addAssistantMessage(messages, response)
     console.log(`[turn ${turn}] ${getText(response)}`)
 
+    // Lesson 12: server tools (web search) run on Anthropic's side. A long
+    // turn can come back paused; the answer so far is already in the
+    // history, so just send it again to let Claude continue.
+    if (response.stop_reason === 'pause_turn') {
+      continue
+    }
+
     if (response.stop_reason !== 'tool_use') {
       return messages
     }
