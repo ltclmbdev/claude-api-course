@@ -10,7 +10,13 @@ import {
   getText,
   sendMessage,
 } from '../messages.ts'
-import { GetCurrentDatetimeInput, getCurrentDatetime } from './datetime.ts'
+import {
+  AddDurationToDatetimeInput,
+  GetCurrentDatetimeInput,
+  addDurationToDatetime,
+  getCurrentDatetime,
+} from './datetime.ts'
+import { SetReminderInput, setReminder } from './reminders.ts'
 
 // Tool name → our function. Each case validates Claude's input with the
 // tool's Zod schema first. New tools get a new case.
@@ -20,6 +26,10 @@ const runTool = (name: string, input: unknown) => {
       const { date_format } = GetCurrentDatetimeInput.parse(input)
       return getCurrentDatetime(date_format)
     }
+    case 'add_duration_to_datetime':
+      return addDurationToDatetime(AddDurationToDatetimeInput.parse(input))
+    case 'set_reminder':
+      return setReminder(SetReminderInput.parse(input))
     default:
       throw new Error(`Unknown tool: ${name}`)
   }
