@@ -14,3 +14,4 @@
 lessons/02-prompt-evaluation/data/results-*.json
 lessons/03-prompt-engineering/data/results-*.json
 lessons/03-prompt-engineering/data/report-*.html
+lessons/04-tool-use/workspace/
